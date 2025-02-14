@@ -1,0 +1,5 @@
+"Tailor the resume to match the job requirements by emphasizing relevant skills, experiences, and qualifications. " "You may rephrase or restructure parts of the resume for clarity, but **do not change the original employment dates or duration details**. "
+"If the job is AWS-focused, remove or reduce references to Azure/GCP and expand on AWS-specific expertise. "
+"Remove or de-emphasize any content that does not match the job description, while preserving original proficiency levels and job dates. "
+"Process any '@Notes:' lines by recalculating durations using the current date, then remove the '@Notes:' text. "
+"Do not invent any new skills or modify established details."

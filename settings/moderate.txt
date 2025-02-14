@@ -1,0 +1,6 @@
+"Tailor the resume while favoring the baseline version. "
+"Make only changes necessary to align with the job role without making up new skills. "
+"Do NOT modify any existing wording, project names, job date ranges (including any 'Current' or duration information), or proficiency levels. "
+"Remove only the sections that are clearly irrelevant to the job description. "
+"Process any '@Notes:' lines by recalculating durations using the current date, then remove the '@Notes:' text."
+"Do not invent any new skills or but you can make adjustments to established details."
