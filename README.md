@@ -22,17 +22,42 @@ There are currently two dummy resumes to choose from; edit them to your liking b
 ## How to Use
 
 1. **Prepare Your Resume**  
-   Write or edit your resume in Markdown format. Ensure the formatting follows standard Markdown conventions. You can preview your Markdown at https://markdownlivepreview.com/.
+   Write or edit your resume in Markdown format. Ensure the formatting follows standard Markdown conventions. You can preview your Markdown at https://markdownlivepreview.com/. The header information that is inserted into your document is in settings/header.txt. Here you can also edit the prompts sent to the AI model. 
+
+2. **Setup Environment**
+   *Step 1*
+   Create a new file in the root of your directory, in the same folder as tailor_and_convert.py exists called .env 
+   In this file called .env add the following line: (Save the file once you are done)
+   ``` bash
+   OPENAI_API_KEY=sk-proj-YOUROPENAIKEYGOESHEREWITHOUTANY""MARKS
+   ```
+   You will need some credits in your account for this to work. Head to https://platform.openai.com/ to create an account and keys if your do not have them already. 
+
+   *Step 2*
+   Install Python 3 - https://www.python.org/downloads/
+   Open up a cli console and navigate to the folder where the tailor_and_convert.py file exists. Then run:
+   ``` bash
+   pip install requirements.txt
+   ```
+   *(Should you wish to your python environments that is your choice. And more details on how to set this up will be created later.)*
 
 2. **Tailor and Convert the Resume**  
    Open a terminal and execute the following command to tailor your resume and convert it to a DOCX file:
+
+      *Easy Run* - This will default to a resume that doesn't modify the resume too much and places it in exported_resumes folder using the o1-mini model.
+   
+   python tailor_and_convert.py \
+     --job_url "https://www.linkedin.com/jobs/view/JOB_ID" \
+     --resume "path/to/your_resume.md" 
+
+   *Detailed Run*
 
    python tailor_and_convert.py \
      --job_url "https://www.linkedin.com/jobs/view/JOB_ID" \
      --resume "path/to/your_resume.md" \
      --output_md "tailored_resume.md" \
      --output_docx "tailored_resume.docx" \
-     --model "gpt-3.5-turbo" \
+     --model "o1-mini" \
      --moderate "true" \
      --verbose
    
@@ -48,6 +73,27 @@ There are currently two dummy resumes to choose from; edit them to your liking b
    - Replace "https://www.linkedin.com/jobs/view/JOB_ID" with the actual job listing URL.
    - Replace "path/to/your_resume.md" with the path to your Markdown resume.
 
+   **Convert Resume**
+   Should you wish to run the conversion without tailoring a resume use the following commands. 
+
+   *Basic command which will export the file called resume.docx to the exported_resumes folder*
+   ``` bash
+   python convert_resume.py resume.md resume.docx
+   ```
+
+   *Extended command where you have control over where it saves the file*
+   ``` bash
+   python convert_resume.py resume.md resume.docx --path /home/user/my_resumes
+   ```
+
+
+| **Argument** | **Required** | **Description** |
+|--------------|--------------|-----------------|
+| `input`      | Yes          | Input Markdown file. |
+| `output`     | Yes          | Output DOCX file name (without a folder path if using `--path`). |
+| `--path`     | No           | Output folder path where the DOCX file will be saved. If not provided, the file is saved in the `exported_resumes` folder. |
+
+
 3. **Review the Output**  
    - The tailored Markdown resume is saved in the markdown_resumes folder.
    - The converted DOCX file is saved in the exported_resumes folder (or in a custom path if provided).
@@ -57,6 +103,7 @@ There are currently two dummy resumes to choose from; edit them to your liking b
 - Python 3.x
 - python-docx: Install with pip install python-docx
 - Other dependencies listed in requirements.txt
+- Built on a Windows Machine - Not tested on macOS yet
 
 ## License
 

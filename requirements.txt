@@ -1,0 +1,6 @@
+beautifulsoup4 
+openai 
+python-docx
+requests==2.32.2
+python-dotenv
+flask
