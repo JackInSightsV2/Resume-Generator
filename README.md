@@ -2,6 +2,8 @@
 
 This repository contains a Python application that tailors Markdown-based resumes to specific job listings and converts them into formatted Word documents. The process preserves the original resume structure and styling while tailoring the content to match job requirements. Right now you need to use the template provided and add details to it. You can't just use any old resume. 
 
+There are currently two dummy resumes to choose from; edit them to your liking but keep the current layout. Modify the current layout and add your skills and proficiencies and work experience keeping the same format and style. Its designed this way to allow it to filter through without being flagged by recruitment programs or turning into a jumbled mess in their systems and ultimately just being ignored. 
+
 ## How It Works
 
 1. **Tailoring the Resume**  
@@ -15,7 +17,7 @@ This repository contains a Python application that tailors Markdown-based resume
    - Inline formatting (bold, italics, hyperlinks) using the Aptos font.
    - Custom table formatting for certifications and other sections.
    
-   Note: convert_resume.py is not intended to be run directly.
+   Note: convert_resume.py is not intended to be run directly; but can be if you just want to convert a markdown resume you already have. 
 
 ## How to Use
 
